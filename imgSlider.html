@@ -34,33 +34,33 @@
   </head>
   <body onload="sliderImg();">
     <div class="slider"> 
-      <img src="nature1.jpg"/>
-      <img src="nature2.jpg"/>
-      <img src="nature3.jpg"/>
+      <img src="nature1.jpg" class="slide"/>
+      <img src="nature2.jpg" class="slide"/>
+      <img src="nature3.jpg" class="slide"/>
       <div class="indicator">
         <span class="indicate"></span>
         <span class="indicate"></span>
         <span class="indicate"></span>
       </div>
     </div>
-  </body>
-  <script>
-    let no=0;
-    function sliderImg(){
-      let slide=document.getElementsByClassName("slide");
-      let indicate=document.getElementsByClassName("indicate");
-      for(let i=o; i<=slide.length; i++)
-      {
-        slide[i].style.display="none";
-        indicate[i].style.background="white";
-      }
-        slide[no].style.display="black";
-        indicate[no].style.background="red";
-        no++;
-        if(no===3){
-          no=0;
+    <script>
+      let no=0;
+      function sliderImg(){
+        let slide=document.getElementsByClassName("slide");
+        let indicate=document.getElementsByClassName("indicate");
+        for(let i=0; i<slide.length; i++)
+        {
+          slide[i].style.display="none";
+          indicate[i].style.background="white";
         }
+          slide[no].style.display="block";
+          indicate[no].style.background="red";
+          no++;
+          if(no===3){
+            no=0;
+          }
       }
-      setInterval(sliderImg,1000);
-  </script>
+        setInterval(sliderImg,1000);
+    </script>
+  </body>
 </html>
